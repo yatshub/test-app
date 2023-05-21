@@ -1,13 +1,13 @@
 steps:
-- name: eu.gcr.io/halogen-inkwell-189512/gcf
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
   args: ['echo', 'Building...']
   id: BUILD
 
-- name: eu.gcr.io/halogen-inkwell-189512/gcf
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
   args: ['echo', 'Testing...']
   id: TEST
     
-- name: eu.gcr.io/halogen-inkwell-189512/gcf
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
   args:
   - gcloud 
   - functions
