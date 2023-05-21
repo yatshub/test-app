@@ -1,13 +1,13 @@
 steps:
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2/bbfed9c8-497e-4b29-a0f3-7f448533d22b'
   args: ['echo', 'Building...']
   id: BUILD
 
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2/bbfed9c8-497e-4b29-a0f3-7f448533d22b'
   args: ['echo', 'Testing...']
   id: TEST
     
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2/bbfed9c8-497e-4b29-a0f3-7f448533d22b'
   args:
   - gcloud 
   - functions
