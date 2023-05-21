@@ -1,13 +1,13 @@
 steps:
-- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
   args: ['echo', 'Building...']
   id: BUILD
 
-- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
   args: ['echo', 'Testing...']
   id: TEST
     
-- name: eu.gcr.io/halogen-inkwell-189512/gcf/europe-central2
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
   args:
   - gcloud 
   - functions
