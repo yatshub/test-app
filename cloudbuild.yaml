@@ -1,11 +1,29 @@
 steps:
-    - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
-    args:
-        - '-c'
-        - |
-          gcloud config set app/cloud_build_timeout 3600 \
-          && gcloud app deploy -q --promote -v=$BUILD_ID \
-          --project=$PROJECT_ID
+    - name: ger.io/google.com/cloudsdktool/cloud-sdk'
+    args: ['echo', 'Building...']
+    id: BUILD
 
-timeout: '3600s'
+    - name: gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: ['echo', 'Testing...']
+    id: TEST
+    
+    - name: gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+    - gcloud 
+    - functions
+    - deploy
+    - $_FUNCTION_NAME
+    - --region=$_FUNCTION_REGION
+    - --source=.
+    - --trigger-http
+    - --runtime=$_FUNCTION_RUNTIME
+    - --project=$_FUNCTION_PROJECT
+    - --entry-point=$_ENTRY_POINT 
+    id: DEPLOY
+
+substitutions:
+    _FUNCTION_PROJECT : halogen-inkwell-189512
+    _FUNCTION_NAME : test-app
+    _FUNCTION_REGION : europe-central2
+    _FUNCTION_RUNTIME : php82
+    _ENTRY_POINT : hello_world
